@@ -10,38 +10,31 @@
 using namespace metal;
 
 [[visible]]
-void waveMotion(realitykit::geometry_parameters params)
+void basicModifier(realitykit::geometry_parameters modifier)
 {
-    float xSpeed = 1;
-    float zSpeed = 1.1;
-    float xAmp = 0.01;
-    float zAmp = 0.02;
-
-    float3 localPos = params.geometry().model_position();
-
-    float xPeriod = (sin(localPos.x * 40 + params.uniforms().time() /40) + 3) * 2;
-    float zPeriod = (sin(localPos.z * 20 + params.uniforms().time() /13) + 3);
-
-    float xOffset = xAmp * sin(xSpeed * params.uniforms().time() + xPeriod * localPos.x);
-    float zOffset = zAmp * sin(zSpeed * params.uniforms().time() + zPeriod * localPos.z);
-    params.geometry().set_model_position_offset(
-        float3(0, xOffset + zOffset, 0)
+    float3 pose = modifier.geometry().model_position();
+    float time = modifier.uniforms().time();
+    float speed = 1.5f;
+    float amplitude = 0.1f;
+    float offset = 0.05f;
+    float cosTime = (cos(time * speed)) * amplitude;
+    float sinTime = (sin(time * speed)) * (amplitude + offset);
+    modifier.geometry().set_model_position_offset(
+        float3(cosTime, sinTime, pose.z + 0.1)
     );
 }
 
 [[visible]]
-void waveSurface(realitykit::surface_parameters params)
+void basicShader(realitykit::surface_parameters shader)
 {
-  auto surface = params.surface();
-  float maxAmp = 0.03;
-  half3 oceanBlue = half3(0, 0.412, 0.58);
-  float waveHeight = (
-    params.geometry().model_position().y + maxAmp
-  ) / (maxAmp * 2);
-
-  surface.set_base_color(
-    oceanBlue + min(1.0f, pow(waveHeight, 8)) * (1 - oceanBlue)
-  );
+    realitykit::surface::surface_properties ssh = shader.surface();
+    float time = shader.uniforms().time();
+    half r = abs(cos(time * 2.5));
+    half g = abs(sin(time * 5.0));
+    half b = abs(r - (g * r));
+    ssh.set_base_color(half3(r, g, b));
+    ssh.set_metallic(half(1.0));
+    ssh.set_roughness(half(0.0));
+    ssh.set_clearcoat(half(1.0));
+    ssh.set_clearcoat_roughness(half(0.0));
 }
-
-

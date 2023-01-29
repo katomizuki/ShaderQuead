@@ -23,15 +23,15 @@ final class CustomARView: ARView {
     private func setupQuad() {
         let device: MTLDevice = MTLCreateSystemDefaultDevice()!
         let library: MTLLibrary = device.makeDefaultLibrary()!
-        let geometryModifier = CustomMaterial.GeometryModifier(named: "waveMotion",
+        let geometryModifier = CustomMaterial.GeometryModifier(named: "basicModifier",
                                                                in: library)
-        let surfaceShader = CustomMaterial.SurfaceShader(named: "waveSurface",
+        let surfaceShader = CustomMaterial.SurfaceShader(named: "basicShader",
                                                          in: library)
         let customMaterial: CustomMaterial
         do {
             try customMaterial = CustomMaterial(surfaceShader: surfaceShader,
                                                 geometryModifier: geometryModifier,
-                                                lightingModel: .unlit)
+                                                lightingModel: .lit)
         } catch {
             fatalError()
         }
