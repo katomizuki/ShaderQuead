@@ -23,9 +23,9 @@ final class CustomARView: ARView {
     private func setupQuad() {
         let device: MTLDevice = MTLCreateSystemDefaultDevice()!
         let library: MTLLibrary = device.makeDefaultLibrary()!
-        let geometryModifier = CustomMaterial.GeometryModifier(named: "basicModifier",
+        let geometryModifier = CustomMaterial.GeometryModifier(named: "twoGeometry",
                                                                in: library)
-        let surfaceShader = CustomMaterial.SurfaceShader(named: "basicShader",
+        let surfaceShader = CustomMaterial.SurfaceShader(named: "twoSurface",
                                                          in: library)
         let customMaterial: CustomMaterial
         do {
