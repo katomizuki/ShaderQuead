@@ -23,6 +23,7 @@ void twoSurface(realitykit::surface_parameters shader)
     float3 worldPosition = shader.geometry().world_position();
     
     float4 custom = shader.uniforms().custom_parameter();
+//    array<packed_float4, 8> customize = shader.uniforms().custom_collec
     float time = shader.uniforms().time();
     float dotResult = dot(worldPosition, float3(1,1,0));
     float repeat = abs(dotResult - time);

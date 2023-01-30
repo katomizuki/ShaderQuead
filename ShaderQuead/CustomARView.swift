@@ -33,6 +33,8 @@ final class CustomARView: ARView {
                                                 geometryModifier: geometryModifier,
                                                 lightingModel: .lit)
             customMaterial.custom.value = simd_make_float4(0, 1, 0, 1)
+            customMaterial.custom.collection += [SIMD4<Float>(1.0,0.5,0.5,0.0)]
+            customMaterial.custom.collection += [SIMD4<Float>(0.3,0.7,0.9,1.0)]
         } catch {
             fatalError()
         }
@@ -45,6 +47,12 @@ final class CustomARView: ARView {
                           relativeTo: nil)
         anchorEntity.addChild(modelEntity)
         scene.anchors.append(anchorEntity)
+    }
+    
+    private func createBuffer() {
+        let device = MTLCreateSystemDefaultDevice()!
+        var buffer: MTLBuffer =  device.makeBuffer(length: 12)!
+//        buffer.se
     }
 }
 
