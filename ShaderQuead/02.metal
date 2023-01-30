@@ -17,18 +17,20 @@ void twoGeometry(realitykit::geometry_parameters modifier)
 }
 
 [[visible]]
-void twoSurface(realitykit::surface_parameters shader)
+void twoSurface(realitykit::surface_parameters shader,
+                constant float *numBuffer [[ buffer(0) ]],
+                uint gid [[thread_position_in_grid]])
 {
     realitykit::surface::surface_properties ssh = shader.surface();
     float3 worldPosition = shader.geometry().world_position();
-    
+    float c = numBuffer[gid];
     float4 custom = shader.uniforms().custom_parameter();
 //    array<packed_float4, 8> customize = shader.uniforms().custom_collec
     float time = shader.uniforms().time();
     float dotResult = dot(worldPosition, float3(1,1,0));
     float repeat = abs(dotResult - time);
     float interpolation = step(fmod(repeat, 1), 0.1);
-    float4 color1 = float4(1,1,0,1);
+    float4 color1 = float4(1,c,0,1);
     float4 color2 = float4(0,1,0,1);
     float4 finalColor = mix(color1, custom, interpolation);
     ssh.set_base_color(half3(finalColor.x,finalColor.y, finalColor.z));

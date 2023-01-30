@@ -18,6 +18,7 @@
 		D379AA8C2987F40200853375 /* ValueNoise3d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA8B2987F40200853375 /* ValueNoise3d.metal */; };
 		D379AA8E2987F40D00853375 /* Random.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA8D2987F40D00853375 /* Random.metal */; };
 		D379AA922987F43900853375 /* RGBtoHSV.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA912987F43900853375 /* RGBtoHSV.metal */; };
+		D379AA942987FC3100853375 /* send_uniform.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA932987FC3100853375 /* send_uniform.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D379AA8B2987F40200853375 /* ValueNoise3d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ValueNoise3d.metal; sourceTree = "<group>"; };
 		D379AA8D2987F40D00853375 /* Random.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Random.metal; sourceTree = "<group>"; };
 		D379AA912987F43900853375 /* RGBtoHSV.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = RGBtoHSV.metal; sourceTree = "<group>"; };
+		D379AA932987FC3100853375 /* send_uniform.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = send_uniform.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				D379AA892987F3E600853375 /* ValueNoise2d.metal */,
 				D379AA8B2987F40200853375 /* ValueNoise3d.metal */,
+				D379AA932987FC3100853375 /* send_uniform.metal */,
 			);
 			path = NoiseMetalUtil;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D379AA942987FC3100853375 /* send_uniform.metal in Sources */,
 				D379AA8A2987F3E600853375 /* ValueNoise2d.metal in Sources */,
 				D379AA832986078900853375 /* 01.metal in Sources */,
 				D379AA752986049900853375 /* ContentView.swift in Sources */,

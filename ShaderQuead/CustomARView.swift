@@ -14,6 +14,7 @@ final class CustomARView: ARView {
         super.init(frame: frameRect)
         session.delegate = self
         setupQuad()
+        createBuffer()
     }
     
     @MainActor required dynamic init?(coder decoder: NSCoder) {
@@ -51,8 +52,29 @@ final class CustomARView: ARView {
     
     private func createBuffer() {
         let device = MTLCreateSystemDefaultDevice()!
-        var buffer: MTLBuffer =  device.makeBuffer(length: 12)!
-//        buffer.se
+        let library = device.makeDefaultLibrary()!
+        guard let kernel = library.makeFunction(name: "send_uniform") else { return }
+        guard let pipelineState = try? device.makeComputePipelineState(function: kernel) else { return }
+        let width = pipelineState.threadExecutionWidth
+        let height = pipelineState.maxTotalThreadsPerThreadgroup / width
+        let threadsPerThreadgroup = MTLSizeMake(width, height, 1)
+        let threadsPerGrid = MTLSizeMake(width, 1, 1)
+        let commandQueue = device.makeCommandQueue()!
+        let commandBuffer = commandQueue.makeCommandBuffer()!
+        let computeEncoder = commandBuffer.makeComputeCommandEncoder()!
+        let length = MemoryLayout<Float>.stride
+        let mtlBuffer = device.makeBuffer(length: length)!
+        mtlBuffer.label = "uniforms_buffer"
+        var a: Float = 1
+        mtlBuffer.contents().copyMemory(from: &a,
+                                        byteCount: MemoryLayout<Float>.stride)
+        computeEncoder.setBuffer(mtlBuffer, offset: 0, index: 0)
+        computeEncoder.setComputePipelineState(pipelineState)
+        
+//        computeEncoder.dispatchThreads(threadsPerGrid,
+//                                       threadsPerThreadgroup: threadsPerThreadgroup)
+        
+        computeEncoder.endEncoding()
     }
 }
 
