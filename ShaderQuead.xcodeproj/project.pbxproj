@@ -37,6 +37,7 @@
 		D379AA912987F43900853375 /* RGBtoHSV.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = RGBtoHSV.metal; sourceTree = "<group>"; };
 		D379AA932987FC3100853375 /* send_uniform.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = send_uniform.metal; sourceTree = "<group>"; };
 		D379AA9529887DE600853375 /* 03.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = 03.metal; sourceTree = "<group>"; };
+		D379AA9829888D2100853375 /* CustomUniform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomUniform.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +54,7 @@
 		D379AA662986049900853375 = {
 			isa = PBXGroup;
 			children = (
-				D379AA712986049900853375 /* ShaderQuead */,
+				D379AA712986049900853375 /* ShaderQuad */,
 				D379AA702986049900853375 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,9 +67,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D379AA712986049900853375 /* ShaderQuead */ = {
+		D379AA712986049900853375 /* ShaderQuad */ = {
 			isa = PBXGroup;
 			children = (
+				D379AA9729888D0F00853375 /* HeaderFile */,
 				D379AA902987F42800853375 /* ColorUtil */,
 				D379AA8F2987F41600853375 /* RandomMetalUtil */,
 				D379AA882987F3CC00853375 /* NoiseMetalUtil */,
@@ -81,7 +83,7 @@
 				D379AA782986049B00853375 /* Assets.xcassets */,
 				D379AA7A2986049B00853375 /* Preview Content */,
 			);
-			path = ShaderQuead;
+			path = ShaderQuad;
 			sourceTree = "<group>";
 		};
 		D379AA7A2986049B00853375 /* Preview Content */ = {
@@ -116,6 +118,14 @@
 				D379AA912987F43900853375 /* RGBtoHSV.metal */,
 			);
 			path = ColorUtil;
+			sourceTree = "<group>";
+		};
+		D379AA9729888D0F00853375 /* HeaderFile */ = {
+			isa = PBXGroup;
+			children = (
+				D379AA9829888D2100853375 /* CustomUniform.h */,
+			);
+			path = HeaderFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

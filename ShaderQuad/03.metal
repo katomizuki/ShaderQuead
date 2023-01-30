@@ -7,6 +7,8 @@
 
 #include <metal_stdlib>
 #include <RealityKit/RealityKit.h>
+#include <RealityKit/RealityKitTextures.h>
+#include <metal_types>
 using namespace metal;
 
 [[ visible ]]
