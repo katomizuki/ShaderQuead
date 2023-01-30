@@ -24,16 +24,15 @@ final class CustomARView: ARView {
     private func setupQuad() {
         let device: MTLDevice = MTLCreateSystemDefaultDevice()!
         let library: MTLLibrary = device.makeDefaultLibrary()!
-        let geometryModifier = CustomMaterial.GeometryModifier(named: "twoGeometry",
+        let geometryModifier = CustomMaterial.GeometryModifier(named: "threeGeometry",
                                                                in: library)
-        let surfaceShader = CustomMaterial.SurfaceShader(named: "twoSurface",
+        let surfaceShader = CustomMaterial.SurfaceShader(named: "threeSurface",
                                                          in: library)
         var customMaterial: CustomMaterial
         do {
             try customMaterial = CustomMaterial(surfaceShader: surfaceShader,
                                                 geometryModifier: geometryModifier,
                                                 lightingModel: .lit)
-            customMaterial.custom.value = simd_make_float4(0, 1, 0, 1)
             customMaterial.custom.collection += [SIMD4<Float>(1.0,0.5,0.5,0.0)]
             customMaterial.custom.collection += [SIMD4<Float>(0.3,0.7,0.9,1.0)]
         } catch {
@@ -51,30 +50,30 @@ final class CustomARView: ARView {
     }
     
     private func createBuffer() {
-        let device = MTLCreateSystemDefaultDevice()!
-        let library = device.makeDefaultLibrary()!
-        guard let kernel = library.makeFunction(name: "send_uniform") else { return }
-        guard let pipelineState = try? device.makeComputePipelineState(function: kernel) else { return }
-        let width = pipelineState.threadExecutionWidth
-        let height = pipelineState.maxTotalThreadsPerThreadgroup / width
-        let threadsPerThreadgroup = MTLSizeMake(width, height, 1)
-        let threadsPerGrid = MTLSizeMake(width, 1, 1)
-        let commandQueue = device.makeCommandQueue()!
-        let commandBuffer = commandQueue.makeCommandBuffer()!
-        let computeEncoder = commandBuffer.makeComputeCommandEncoder()!
-        let length = MemoryLayout<Float>.stride
-        let mtlBuffer = device.makeBuffer(length: length)!
-        mtlBuffer.label = "uniforms_buffer"
-        var a: Float = 1
-        mtlBuffer.contents().copyMemory(from: &a,
-                                        byteCount: MemoryLayout<Float>.stride)
-        computeEncoder.setBuffer(mtlBuffer, offset: 0, index: 0)
-        computeEncoder.setComputePipelineState(pipelineState)
-        
-//        computeEncoder.dispatchThreads(threadsPerGrid,
-//                                       threadsPerThreadgroup: threadsPerThreadgroup)
-        
-        computeEncoder.endEncoding()
+//        let device = MTLCreateSystemDefaultDevice()!
+//        let library = device.makeDefaultLibrary()!
+//        guard let kernel = library.makeFunction(name: "send_uniform") else { return }
+//        guard let pipelineState = try? device.makeComputePipelineState(function: kernel) else { return }
+//        let width = pipelineState.threadExecutionWidth
+//        let height = pipelineState.maxTotalThreadsPerThreadgroup / width
+//        let threadsPerThreadgroup = MTLSizeMake(width, height, 1)
+//        let threadsPerGrid = MTLSizeMake(width, 1, 1)
+//        let commandQueue = device.makeCommandQueue()!
+//        let commandBuffer = commandQueue.makeCommandBuffer()!
+//        let computeEncoder = commandBuffer.makeComputeCommandEncoder()!
+//        let length = MemoryLayout<Float>.stride
+//        let mtlBuffer = device.makeBuffer(length: length)!
+//        mtlBuffer.label = "uniforms_buffer"
+//        var a: Float = 1
+//        mtlBuffer.contents().copyMemory(from: &a,
+//                                        byteCount: MemoryLayout<Float>.stride)
+//        computeEncoder.setBuffer(mtlBuffer, offset: 0, index: 0)
+//        computeEncoder.setComputePipelineState(pipelineState)
+//
+////        computeEncoder.dispatchThreads(threadsPerGrid,
+////                                       threadsPerThreadgroup: threadsPerThreadgroup)
+//
+//        computeEncoder.endEncoding()
     }
 }
 
