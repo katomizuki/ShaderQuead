@@ -27,11 +27,12 @@ final class CustomARView: ARView {
                                                                in: library)
         let surfaceShader = CustomMaterial.SurfaceShader(named: "twoSurface",
                                                          in: library)
-        let customMaterial: CustomMaterial
+        var customMaterial: CustomMaterial
         do {
             try customMaterial = CustomMaterial(surfaceShader: surfaceShader,
                                                 geometryModifier: geometryModifier,
                                                 lightingModel: .lit)
+            customMaterial.custom.value = simd_make_float4(0, 1, 0, 1)
         } catch {
             fatalError()
         }
@@ -51,5 +52,15 @@ extension CustomARView: ARSessionDelegate {
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         let currentCameraTransform = frame.camera.transform
+    }
+}
+
+extension CustomMaterial.Custom {
+    struct Keeper {
+        static var computedPty: [SIMD4<Float>] = []
+    }
+    var collection: [SIMD4<Float>] {
+        get { return Keeper.computedPty }
+        set { Keeper.computedPty = newValue }
     }
 }
