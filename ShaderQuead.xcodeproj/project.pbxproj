@@ -14,6 +14,10 @@
 		D379AA832986078900853375 /* 01.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA822986078900853375 /* 01.metal */; };
 		D379AA8529860A8600853375 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D379AA8429860A8600853375 /* CustomARView.swift */; };
 		D379AA8729873B5700853375 /* 02.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA8629873B5700853375 /* 02.metal */; };
+		D379AA8A2987F3E600853375 /* ValueNoise2d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA892987F3E600853375 /* ValueNoise2d.metal */; };
+		D379AA8C2987F40200853375 /* ValueNoise3d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA8B2987F40200853375 /* ValueNoise3d.metal */; };
+		D379AA8E2987F40D00853375 /* Random.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA8D2987F40D00853375 /* Random.metal */; };
+		D379AA922987F43900853375 /* RGBtoHSV.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA912987F43900853375 /* RGBtoHSV.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		D379AA822986078900853375 /* 01.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = 01.metal; sourceTree = "<group>"; };
 		D379AA8429860A8600853375 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		D379AA8629873B5700853375 /* 02.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = 02.metal; sourceTree = "<group>"; };
+		D379AA892987F3E600853375 /* ValueNoise2d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ValueNoise2d.metal; sourceTree = "<group>"; };
+		D379AA8B2987F40200853375 /* ValueNoise3d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ValueNoise3d.metal; sourceTree = "<group>"; };
+		D379AA8D2987F40D00853375 /* Random.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Random.metal; sourceTree = "<group>"; };
+		D379AA912987F43900853375 /* RGBtoHSV.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = RGBtoHSV.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,9 @@
 		D379AA712986049900853375 /* ShaderQuead */ = {
 			isa = PBXGroup;
 			children = (
+				D379AA902987F42800853375 /* ColorUtil */,
+				D379AA8F2987F41600853375 /* RandomMetalUtil */,
+				D379AA882987F3CC00853375 /* NoiseMetalUtil */,
 				D379AA722986049900853375 /* AppDelegate.swift */,
 				D379AA742986049900853375 /* ContentView.swift */,
 				D379AA8429860A8600853375 /* CustomARView.swift */,
@@ -74,6 +85,31 @@
 				D379AA7B2986049B00853375 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D379AA882987F3CC00853375 /* NoiseMetalUtil */ = {
+			isa = PBXGroup;
+			children = (
+				D379AA892987F3E600853375 /* ValueNoise2d.metal */,
+				D379AA8B2987F40200853375 /* ValueNoise3d.metal */,
+			);
+			path = NoiseMetalUtil;
+			sourceTree = "<group>";
+		};
+		D379AA8F2987F41600853375 /* RandomMetalUtil */ = {
+			isa = PBXGroup;
+			children = (
+				D379AA8D2987F40D00853375 /* Random.metal */,
+			);
+			path = RandomMetalUtil;
+			sourceTree = "<group>";
+		};
+		D379AA902987F42800853375 /* ColorUtil */ = {
+			isa = PBXGroup;
+			children = (
+				D379AA912987F43900853375 /* RGBtoHSV.metal */,
+			);
+			path = ColorUtil;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,11 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D379AA8A2987F3E600853375 /* ValueNoise2d.metal in Sources */,
 				D379AA832986078900853375 /* 01.metal in Sources */,
 				D379AA752986049900853375 /* ContentView.swift in Sources */,
 				D379AA8729873B5700853375 /* 02.metal in Sources */,
+				D379AA922987F43900853375 /* RGBtoHSV.metal in Sources */,
 				D379AA8529860A8600853375 /* CustomARView.swift in Sources */,
 				D379AA732986049900853375 /* AppDelegate.swift in Sources */,
+				D379AA8E2987F40D00853375 /* Random.metal in Sources */,
+				D379AA8C2987F40200853375 /* ValueNoise3d.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
