@@ -26,7 +26,7 @@
 		D379AAA02989E28A00853375 /* ClassicPerlinNoise3d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA9F2989E28A00853375 /* ClassicPerlinNoise3d.metal */; };
 		D379AAA22989E29F00853375 /* ClassicPerlinNoise4d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA12989E29F00853375 /* ClassicPerlinNoise4d.metal */; };
 		D379AAA42989E2AE00853375 /* SimplexNoise2d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA32989E2AE00853375 /* SimplexNoise2d.metal */; };
-		D379AAA62989E2BB00853375 /* SimpleNoise3d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA52989E2BB00853375 /* SimpleNoise3d.metal */; };
+		D379AAA62989E2BB00853375 /* SimplexNoise3d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA52989E2BB00853375 /* SimplexNoise3d.metal */; };
 		D379AAA82989E2C500853375 /* SimplexNoise4d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA72989E2C500853375 /* SimplexNoise4d.metal */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,7 @@
 		D379AA9F2989E28A00853375 /* ClassicPerlinNoise3d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ClassicPerlinNoise3d.metal; sourceTree = "<group>"; };
 		D379AAA12989E29F00853375 /* ClassicPerlinNoise4d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ClassicPerlinNoise4d.metal; sourceTree = "<group>"; };
 		D379AAA32989E2AE00853375 /* SimplexNoise2d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SimplexNoise2d.metal; sourceTree = "<group>"; };
-		D379AAA52989E2BB00853375 /* SimpleNoise3d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SimpleNoise3d.metal; sourceTree = "<group>"; };
+		D379AAA52989E2BB00853375 /* SimplexNoise3d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SimplexNoise3d.metal; sourceTree = "<group>"; };
 		D379AAA72989E2C500853375 /* SimplexNoise4d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SimplexNoise4d.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +119,7 @@
 				D379AA992989DE3700853375 /* ValueNoise4d.metal */,
 				D379AAA32989E2AE00853375 /* SimplexNoise2d.metal */,
 				D379AAA72989E2C500853375 /* SimplexNoise4d.metal */,
-				D379AAA52989E2BB00853375 /* SimpleNoise3d.metal */,
+				D379AAA52989E2BB00853375 /* SimplexNoise3d.metal */,
 				D379AA9B2989E25700853375 /* ClassicPerlinNoise2d.metal */,
 				D379AA9F2989E28A00853375 /* ClassicPerlinNoise3d.metal */,
 				D379AAA12989E29F00853375 /* ClassicPerlinNoise4d.metal */,
@@ -238,7 +238,7 @@
 				D379AA732986049900853375 /* AppDelegate.swift in Sources */,
 				D379AA8E2987F40D00853375 /* Random.metal in Sources */,
 				D379AAA22989E29F00853375 /* ClassicPerlinNoise4d.metal in Sources */,
-				D379AAA62989E2BB00853375 /* SimpleNoise3d.metal in Sources */,
+				D379AAA62989E2BB00853375 /* SimplexNoise3d.metal in Sources */,
 				D379AA8C2987F40200853375 /* ValueNoise3d.metal in Sources */,
 				D379AA9629887DE600853375 /* 03.metal in Sources */,
 			);
