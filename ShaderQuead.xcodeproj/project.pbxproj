@@ -20,6 +20,14 @@
 		D379AA922987F43900853375 /* RGBtoHSV.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA912987F43900853375 /* RGBtoHSV.metal */; };
 		D379AA942987FC3100853375 /* send_uniform.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA932987FC3100853375 /* send_uniform.metal */; };
 		D379AA9629887DE600853375 /* 03.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA9529887DE600853375 /* 03.metal */; };
+		D379AA9A2989DE3700853375 /* ValueNoise4d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA992989DE3700853375 /* ValueNoise4d.metal */; };
+		D379AA9C2989E25700853375 /* ClassicPerlinNoise2d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA9B2989E25700853375 /* ClassicPerlinNoise2d.metal */; };
+		D379AA9E2989E26A00853375 /* FBMNoise.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA9D2989E26A00853375 /* FBMNoise.metal */; };
+		D379AAA02989E28A00853375 /* ClassicPerlinNoise3d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AA9F2989E28A00853375 /* ClassicPerlinNoise3d.metal */; };
+		D379AAA22989E29F00853375 /* ClassicPerlinNoise4d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA12989E29F00853375 /* ClassicPerlinNoise4d.metal */; };
+		D379AAA42989E2AE00853375 /* SimplexNoise2d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA32989E2AE00853375 /* SimplexNoise2d.metal */; };
+		D379AAA62989E2BB00853375 /* SimpleNoise3d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA52989E2BB00853375 /* SimpleNoise3d.metal */; };
+		D379AAA82989E2C500853375 /* SimplexNoise4d.metal in Sources */ = {isa = PBXBuildFile; fileRef = D379AAA72989E2C500853375 /* SimplexNoise4d.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,14 @@
 		D379AA932987FC3100853375 /* send_uniform.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = send_uniform.metal; sourceTree = "<group>"; };
 		D379AA9529887DE600853375 /* 03.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = 03.metal; sourceTree = "<group>"; };
 		D379AA9829888D2100853375 /* CustomUniform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomUniform.h; sourceTree = "<group>"; };
+		D379AA992989DE3700853375 /* ValueNoise4d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ValueNoise4d.metal; sourceTree = "<group>"; };
+		D379AA9B2989E25700853375 /* ClassicPerlinNoise2d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ClassicPerlinNoise2d.metal; sourceTree = "<group>"; };
+		D379AA9D2989E26A00853375 /* FBMNoise.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FBMNoise.metal; sourceTree = "<group>"; };
+		D379AA9F2989E28A00853375 /* ClassicPerlinNoise3d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ClassicPerlinNoise3d.metal; sourceTree = "<group>"; };
+		D379AAA12989E29F00853375 /* ClassicPerlinNoise4d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ClassicPerlinNoise4d.metal; sourceTree = "<group>"; };
+		D379AAA32989E2AE00853375 /* SimplexNoise2d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SimplexNoise2d.metal; sourceTree = "<group>"; };
+		D379AAA52989E2BB00853375 /* SimpleNoise3d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SimpleNoise3d.metal; sourceTree = "<group>"; };
+		D379AAA72989E2C500853375 /* SimplexNoise4d.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SimplexNoise4d.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +86,7 @@
 		D379AA712986049900853375 /* ShaderQuad */ = {
 			isa = PBXGroup;
 			children = (
+				D379AA932987FC3100853375 /* send_uniform.metal */,
 				D379AA9729888D0F00853375 /* HeaderFile */,
 				D379AA902987F42800853375 /* ColorUtil */,
 				D379AA8F2987F41600853375 /* RandomMetalUtil */,
@@ -99,7 +116,14 @@
 			children = (
 				D379AA892987F3E600853375 /* ValueNoise2d.metal */,
 				D379AA8B2987F40200853375 /* ValueNoise3d.metal */,
-				D379AA932987FC3100853375 /* send_uniform.metal */,
+				D379AA992989DE3700853375 /* ValueNoise4d.metal */,
+				D379AAA32989E2AE00853375 /* SimplexNoise2d.metal */,
+				D379AAA72989E2C500853375 /* SimplexNoise4d.metal */,
+				D379AAA52989E2BB00853375 /* SimpleNoise3d.metal */,
+				D379AA9B2989E25700853375 /* ClassicPerlinNoise2d.metal */,
+				D379AA9F2989E28A00853375 /* ClassicPerlinNoise3d.metal */,
+				D379AAA12989E29F00853375 /* ClassicPerlinNoise4d.metal */,
+				D379AA9D2989E26A00853375 /* FBMNoise.metal */,
 			);
 			path = NoiseMetalUtil;
 			sourceTree = "<group>";
@@ -200,13 +224,21 @@
 			files = (
 				D379AA942987FC3100853375 /* send_uniform.metal in Sources */,
 				D379AA8A2987F3E600853375 /* ValueNoise2d.metal in Sources */,
+				D379AA9C2989E25700853375 /* ClassicPerlinNoise2d.metal in Sources */,
 				D379AA832986078900853375 /* 01.metal in Sources */,
+				D379AA9E2989E26A00853375 /* FBMNoise.metal in Sources */,
+				D379AAA82989E2C500853375 /* SimplexNoise4d.metal in Sources */,
+				D379AAA02989E28A00853375 /* ClassicPerlinNoise3d.metal in Sources */,
 				D379AA752986049900853375 /* ContentView.swift in Sources */,
 				D379AA8729873B5700853375 /* 02.metal in Sources */,
 				D379AA922987F43900853375 /* RGBtoHSV.metal in Sources */,
+				D379AA9A2989DE3700853375 /* ValueNoise4d.metal in Sources */,
+				D379AAA42989E2AE00853375 /* SimplexNoise2d.metal in Sources */,
 				D379AA8529860A8600853375 /* CustomARView.swift in Sources */,
 				D379AA732986049900853375 /* AppDelegate.swift in Sources */,
 				D379AA8E2987F40D00853375 /* Random.metal in Sources */,
+				D379AAA22989E29F00853375 /* ClassicPerlinNoise4d.metal in Sources */,
+				D379AAA62989E2BB00853375 /* SimpleNoise3d.metal in Sources */,
 				D379AA8C2987F40200853375 /* ValueNoise3d.metal in Sources */,
 				D379AA9629887DE600853375 /* 03.metal in Sources */,
 			);

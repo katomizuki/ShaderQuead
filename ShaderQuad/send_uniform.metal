@@ -9,6 +9,9 @@
 using namespace metal;
 
 kernel void send_uniform(constant float *numBuffer [[buffer(0)]],
-                         uint gid [[thread_position_in_grid]]) {
+                         uint gid [[thread_position_in_grid]],
+                         device float *outBuffer [[ buffer(1) ]]) {
     float num = numBuffer[gid];
+    outBuffer[gid] = num;
+   
 }
