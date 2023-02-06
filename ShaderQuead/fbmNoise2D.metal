@@ -1,5 +1,5 @@
 //
-//  FBMNoise.metal
+//  fbmNoise2D.metal
 //  ShaderQuead
 //
 //  Created by ミズキ on 2023/02/01.

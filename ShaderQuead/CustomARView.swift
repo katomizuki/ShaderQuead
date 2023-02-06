@@ -26,15 +26,14 @@ final class CustomARView: ARView {
         let library: MTLLibrary = device.makeDefaultLibrary()!
         let geometryModifier = CustomMaterial.GeometryModifier(named: "threeGeometry",
                                                                in: library)
-        let surfaceShader = CustomMaterial.SurfaceShader(named: "threeSurface",
+        let surfaceShader = CustomMaterial.SurfaceShader(named: "fourSurface",
                                                          in: library)
         var customMaterial: CustomMaterial
         do {
             try customMaterial = CustomMaterial(surfaceShader: surfaceShader,
                                                 geometryModifier: geometryModifier,
                                                 lightingModel: .lit)
-            customMaterial.custom.collection += [SIMD4<Float>(1.0,0.5,0.5,0.0)]
-            customMaterial.custom.collection += [SIMD4<Float>(0.3,0.7,0.9,1.0)]
+            customMaterial.custom.value = SIMD4<Float>(1.0,0.5,0.5,0.0)
         } catch {
             fatalError()
         }

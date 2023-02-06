@@ -1,5 +1,5 @@
 //
-//  SimplexNoise4d.metal
+//  test.metal
 //  ShaderQuead
 //
 //  Created by ミズキ on 2023/02/01.
